@@ -1,0 +1,35 @@
+# Week 1 Practical
+
+## Exercise 2
+
+I used this command to display the calendars from July through October 2026:
+
+```bash
+cal -A 3 7 2026
+```
+
+## Exercise 3
+
+1. I navigated to the DataFiles directory:
+
+```bash
+cd ~/IntroBiolComp-2026/Python/DataFiles
+```
+
+2. I counted the lines in BeeSpecies.txt:
+
+```bash
+wc -l BeeSpecies.txt
+```
+
+3. I counted the words in CodonTables.tsv:
+
+```bash
+wc -w ../../Unix/DataFiles/CodonTables.tsv
+```
+
+4. I displayed the final codon:
+
+```bash
+tail -n 1 ../../Unix/DataFiles/CodonTables.tsv
+```
