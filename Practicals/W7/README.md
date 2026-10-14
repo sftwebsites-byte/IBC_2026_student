@@ -1,4 +1,4 @@
-# Week 7 Practical
+regular expressions to extract ZIP codes# Week 7 Practical
 
 ## Regular Expression Exercises
 
@@ -78,12 +78,12 @@ Examples: A12345 and AB123456
 ## Final Problem: A Map of Science
 
 ### 1. Extract ZIP codes
-Use regular expressions to extract five-digit ZIP-code candidates
+I used regular expressions to extract five-digit ZIP-code candidates
 from pubmed_results.txt, including the first five digits of ZIP+4
 codes. Match these candidates against the coordinate table.
 
 ### 2. Create the required lists
-Use the csv module to read the ZIP, LAT, and LNG columns.
+I Used the csv module to read the ZIP, LAT, and LNG columns.
 
 Create four corresponding lists:
 - zip_code: unique ZIP codes, stored as strings to preserve leading zeros.
@@ -104,8 +104,4 @@ The calculated results are saved in zip_summary.csv.
 
 ## Results
 
-The analysis found 502 unique ZIP codes and 5,272 ZIP-code
-occurrences matching the coordinate table.
-
-The map is saved as map_of_science.png, and the ZIP codes,
-coordinates, and counts are saved as zip_summary.csv.
+My analysis found 502 unique ZIP codes and 5,272 total ZIP-code occurrences matching the coordinate table. I saved the map as map_of_science.png and the ZIP codes, coordinates, and counts as zip_summary.csv
