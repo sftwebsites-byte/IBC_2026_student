@@ -1,0 +1,172 @@
+# Week 10 Practical
+Sahil Ghani
+
+## Practice Exercise: Three Toads
+
+I simulated 100,000 experiments for each toad, assuming either hand was equally likely to be used. I calculated two-sided p-values by counting simulated results at least as far from an equal split as the observed result.
+
+| Right-hand uses | Trials | p-value | Conclusion |
+|---|---|---|---|
+| 2 | 16 | 0.00450 | Significant left-handedness |
+| 15 | 16 | 0.00043 | Significant right-handedness |
+| 13 | 18 | 0.09607 | No significant handedness |
+
+## Practice Exercise: Pseudoscorpion Mating
+
+### 1. Observed means
+
+Females in the Double treatment averaged 3.625 successful broods.
+Females in the Single treatment averaged 2.200 successful broods.
+
+The Double treatment had 1.425 more successful broods on average.
+
+### 2. Randomization function
+
+My randomize_broods() function uses sample() without replacement to
+shuffle Successful_broods while keeping treatment assignments fixed.
+
+### 3. Randomized difference
+
+For each shuffled dataset, I calculated the mean for the Double
+treatment minus the mean for the Single treatment.
+
+### 4. Repeated randomizations
+
+I repeated the randomization 10,000 times and stored the differences
+in random_differences.
+
+### 5. Extreme results
+
+There were 234 randomizations with a difference at least as large
+in absolute magnitude as the observed difference of 1.425.
+
+### 6. p-value and conclusion
+
+p = 234 / 10,000 = 0.0234.
+
+At a significance level of 0.05, I reject the null hypothesis of no
+difference between treatments. The higher observed mean in the Double
+treatment supports the idea that mating with two different males
+increases successful brood production.
+
+## Final Problem 1: Are Most Toads Right-Handed?
+
+### 1. Individual handedness
+
+I used 100,000 simulations per toad under the null hypothesis that
+each hand had a probability of 0.5. I classified significant results
+using a two-sided p-value below 0.05.
+
+| Toad | Sex | Trials | Right uses | p-value | Conclusion |
+|---|---|---|---|---|---|
+| T1 | F | 16 | 14 | 0.00376 | Right-handed |
+| T2 | M | 15 | 12 | 0.03520 | Right-handed |
+| T3 | M | 17 | 3 | 0.01264 | Left-handed |
+| T4 | M | 15 | 15 | 0.00008 | Right-handed |
+| T5 | M | 16 | 12 | 0.07644 | No significant handedness |
+| T6 | F | 16 | 16 | 0.00004 | Right-handed |
+| T7 | M | 16 | 15 | 0.00056 | Right-handed |
+| T8 | F | 16 | 15 | 0.00045 | Right-handed |
+| T9 | F | 16 | 2 | 0.00451 | Left-handed |
+| T10 | F | 16 | 15 | 0.00051 | Right-handed |
+| T11 | M | 15 | 15 | 0.00006 | Right-handed |
+| T12 | F | 17 | 12 | 0.14403 | No significant handedness |
+| T13 | F | 18 | 16 | 0.00143 | Right-handed |
+| T14 | F | 18 | 8 | 0.81469 | No significant handedness |
+| T15 | M | 15 | 14 | 0.00094 | Right-handed |
+| T16 | M | 16 | 15 | 0.00045 | Right-handed |
+| T17 | F | 16 | 2 | 0.00397 | Left-handed |
+| T18 | M | 16 | 9 | 0.80119 | No significant handedness |
+
+Overall, 11 toads were classified as right-handed, 3 as left-handed,
+and 4 showed no significant handedness. A nonsignificant result does
+not establish that a toad has no hand preference.
+
+### 2. Population handedness
+
+I excluded the four toads without significant handedness and tested
+whether the remaining 14 toads were equally likely to be right- or
+left-handed.
+
+Under the null hypothesis, I simulated the number of right-handed
+toads using a probability of 0.5. The two-sided simulated p-value
+was 0.05802.
+
+Because p > 0.05, I fail to reject the null hypothesis. Although more
+toads were classified as right-handed, this test does not provide
+sufficient evidence of unequal right- and left-handedness at the
+0.05 significance level.
+
+### 3. Male versus female right-handedness
+
+Six of nine males were classified as right-handed, compared with
+five of nine females.
+
+- Male proportion: 0.6667
+- Female proportion: 0.5556
+- Male minus female difference: 0.1111
+
+I randomized right-handed status among all 18 toads 10,000 times,
+keeping sex labels fixed. Toads without significant handedness
+were included as not classified right-handed.
+
+The two-sided randomization p-value was 1. Every randomization
+produced an absolute difference at least as large as the small
+observed difference.
+
+I fail to reject the null hypothesis. These data do not provide
+evidence that males and females differ in their probability of
+being classified as right-handed.
+
+## Final Problem 2: Assortative Mating in Animals
+
+### 1. Function for mean correlation
+
+My mean_r() function takes a taxon name, selects its correlation
+values, and returns their mean.
+
+The mean correlation for Fish was 0.3971901. This positive value
+indicates assortative mating by size on average.
+
+### 2. Is the mean especially high for fish?
+
+I sampled 37 correlation values without replacement from the entire
+dataset and calculated their mean. I repeated this 50,000 times.
+
+I estimated an upper-tail p-value using the proportion of random
+means at least as large as the observed fish mean.
+
+The p-value was 0.00316. At the 0.05 significance level, fish had an
+unusually high mean correlation compared with random groups of
+37 observations from the full dataset.
+
+### 3. Results for all taxa
+
+For each taxon, I repeated the procedure using its own sample size
+and 50,000 random samples.
+
+| Taxon | N | Mean r | Upper-tail p-value |
+|---|---|---|---|
+| Amphibian | 143 | 0.1855282 | 0.99998 |
+| Annelids | 1 | 0.2000000 | 0.59226 |
+| Bird | 52 | 0.1317567 | 0.99996 |
+| Chelicerate | 9 | 0.4911353 | 0.01068 |
+| Crustacean | 149 | 0.4030283 | 0 observed exceedances |
+| Fish | 37 | 0.3971901 | 0.00316 |
+| Gastropod | 10 | 0.4010000 | 0.07746 |
+| Insect | 106 | 0.1966453 | 0.99840 |
+| Mammal | 1 | 0.0090000 | 0.84158 |
+| Protist | 5 | 0.6140200 | 0.00368 |
+| Reptile | 8 | 0.1175000 | 0.93080 |
+
+Chelicerates, crustaceans, fish, and protists had unusually high
+mean correlations at an unadjusted significance level of 0.05.
+
+For crustaceans, none of the 50,000 random samples reached the
+observed mean. The simulation estimate was zero, which does not
+mean the true probability is zero. A plus-one estimate is
+1 / 50,001, approximately 0.00002.
+
+The other taxa did not have significantly high means in these
+upper-tail tests. These comparisons were not adjusted for
+multiple testing.
