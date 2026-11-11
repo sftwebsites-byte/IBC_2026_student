@@ -7,5 +7,3 @@ Week 11 — two final exercises
 5. I review Answers.md and the figures, then upload every file in W11 to Practicals/W11 in my GitHub repository.
 6. I preview Answers.md on GitHub to check that all three images display.
 7. I submit the GitHub folder link if Canvas requests it.
-
-All required plots have already been generated. The scripts use base R and require no additional packages. I keep penguins.csv alongside the scripts.
