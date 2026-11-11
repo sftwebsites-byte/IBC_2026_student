@@ -1,0 +1,11 @@
+Week 11 — two final exercises
+
+1. I put the W11 folder inside ~/IBC_2026_student/Practicals/.
+2. I open exercise1.R in RStudio and set the working directory to its source file location (Session > Set Working Directory > To Source File Location).
+3. I click Source to regenerate my plotting-symbol figures.
+4. I open exercise2.R and click Source to regenerate my scientific figure.
+5. I review Answers.md and the figures, then upload every file in W11 to Practicals/W11 in my GitHub repository.
+6. I preview Answers.md on GitHub to check that all three images display.
+7. I submit the GitHub folder link if Canvas requests it.
+
+All required plots have already been generated. The scripts use base R and require no additional packages. I keep penguins.csv alongside the scripts.
